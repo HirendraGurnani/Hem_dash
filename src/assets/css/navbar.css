@@ -1,0 +1,21 @@
+.header{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+    color: #084b8f;
+    /* text-shadow: 1px 3px 3px midnightblue; */
+  }
+  .title{
+    margin: 10px 0 0 0;
+  }
+  .nav_img{
+    width: 130px;
+    height: 120px;
+    color: #e8d126;
+  }
+
+  .nav_img:last-child{
+    width: 115px;
+  }

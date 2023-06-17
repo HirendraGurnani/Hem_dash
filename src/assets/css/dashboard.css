@@ -1,0 +1,76 @@
+@import url('../../index.css');
+*{
+    font-family: 'Signika Negative', sans-serif;
+}
+form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+}
+form>input{
+    font-family: 'Signika Negative', sans-serif;
+    font-size: 25px;
+    background-color: #1976d200;
+    border: 10px solid #084b8f;
+    outline: none;
+    height: 25px;
+    padding: 8px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
+
+
+form>button{
+    font-family: 'Signika Negative', sans-serif;
+    font-size: 20px;
+    border: none;
+    height: 61px;
+    padding: 8px 8px 8px 0;
+    background-color: #084b8f;
+    color: aliceblue;
+    cursor: pointer;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+.dashboard{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    margin-top: 10px;
+}
+.dashboard>.card{
+    padding: 30px;
+    background-color: #44b4e6;
+    height: 600px;
+    width: 60%;
+    border-radius: 15px;
+    display: flex;
+}
+.cont-font{
+    font-family: 'Signika Negative', sans-serif;
+}
+
+
+hr{
+    border: 1px dashed #032939;
+}
+
+.calendar{
+    width: 400px;
+    background-color: #ffffff00;
+}
+
+.fc{
+    width: 400px;
+    height: 389px;
+    background-color: transparent;
+}
+
+/* ::-webkit-scrollbar{
+    width: 0px;
+} */
