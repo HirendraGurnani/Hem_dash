@@ -1,13 +1,13 @@
 import "./App.css";
 import Navbar from "./components/navbar";
-import Test from "./components/test";
+import DashboardComponent from "./components/dashboardComponent";
 function App() {
   return (
     <>
       <div className="App">
         <Navbar></Navbar>
       </div>
-      <Test></Test>
+      <DashboardComponent></DashboardComponent>
     </>
   );
 }

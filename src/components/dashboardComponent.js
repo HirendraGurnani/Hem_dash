@@ -10,17 +10,16 @@ import dayGridPlugin from "@fullcalendar/daygrid";
 
 var baseURL = "http://localhost:4000/posts";
 
-
-class Test extends Component {
+class DashboardComponent extends Component {
   constructor(props) {
     super(props);
     this.calendarRef = React.createRef();
-    
+
     //Managing Present date
     const d = new Date();
-    const month = (d.getMonth() + 1).toString().padStart(2, '0');
+    const month = (d.getMonth() + 1).toString().padStart(2, "0");
     const year = d.getFullYear();
-    const pres_month = `${year}-${month}`
+    const pres_month = `${year}-${month}`;
 
     //States
     this.state = {
@@ -32,12 +31,9 @@ class Test extends Component {
     };
   }
 
-  remove
+  remove;
 
   // Replace 'className' with the actual class name of the elements you want to target
-
-
-
 
   handleInputChange = (event) => {
     this.setState({ index: event.target.value });
@@ -77,11 +73,11 @@ class Test extends Component {
     let dashboard_comp;
     let dash_form;
 
-    if (employee.id === 0 || employee.id > 4) {
+    if (employee.id === 0) {
       dash_form = (
         <form onSubmit={this.handleSubmit}>
           <input
-            type="text"
+            type="number"
             value={this.state.index}
             onChange={this.handleInputChange}
           />
@@ -97,7 +93,7 @@ class Test extends Component {
       dash_form = (
         <form onSubmit={this.handleSubmit}>
           <input
-            type="text"
+            type="number"
             value={this.state.index}
             onChange={this.handleInputChange}
           />
@@ -112,8 +108,6 @@ class Test extends Component {
                 maxWidth: 250,
                 borderRadius: "12px",
                 mt: 0,
-                borderTopRightRadius: 0,
-                borderBottomRightRadius: 0,
               }}
             >
               <CardMedia
@@ -125,11 +119,12 @@ class Test extends Component {
               />
               <CardContent
                 sx={{
-                  backgroundColor: "#c9b518",
+                  backgroundColor: "#44b4e6",
                   fontFamily: "Signika Negative",
+                  color: "#ffffff",
                 }}
               >
-                <Typography gutterBottom variant="h5" component="div">
+                <Typography gutterBottom variant="h6" component="div">
                   <div>
                     <sup>Name</sup>
                     <br />
@@ -138,7 +133,7 @@ class Test extends Component {
                   </div>
                 </Typography>
                 <hr />
-                <Typography gutterBottom variant="h5" component="div">
+                <Typography gutterBottom variant="h6" component="div">
                   <div>
                     <sup>Employee ID</sup>
                     <br />
@@ -147,12 +142,7 @@ class Test extends Component {
                   </div>
                 </Typography>
                 <hr />
-                <Typography
-                  className="cont-font"
-                  gutterBottom
-                  variant="h5"
-                  component="div"
-                >
+                <Typography gutterBottom variant="h6" component="div">
                   <div>
                     <sup>Contact Number</sup>
                     <br />
@@ -161,12 +151,7 @@ class Test extends Component {
                   </div>
                 </Typography>
                 <hr />
-                <Typography
-                  className="cont-font"
-                  gutterBottom
-                  variant="h5"
-                  component="div"
-                >
+                <Typography gutterBottom variant="h6" component="div">
                   <div>
                     <sup>Designation</sup>
                     <br />
@@ -178,36 +163,49 @@ class Test extends Component {
             </Card>
             <Card
               sx={{
-                width: 920,
-                borderRadius: "12px",
-                mt: 0,
-                backgroundColor: "#c9b518",
-                borderTopLeftRadius: 0,
-                borderBottomLeftRadius: 0,
+                width: 900,
+                boxShadow: "none",
               }}
             >
               <CardContent
+                className="calendar_display"
                 sx={{
-                  backgroundColor: "#c9b518",
                   fontFamily: "Signika Negative",
                 }}
               >
                 <div>
+                  {/* <label>Select Month & Year</label> */}
+                  <br />
                   <input
                     type="month"
                     value={this.state.selectedMonth}
                     onInput={this.handleMonthChange}
                   />
-                  <div className="calendar">
-                    <FullCalendar
-                      ref={this.calendarRef}
-                      plugins={[dayGridPlugin]}
-                      initialView="dayGridMonth"
-                    />
-                  </div>
+                  <FullCalendar
+                    ref={this.calendarRef}
+                    plugins={[dayGridPlugin]}
+                    initialView="dayGridMonth"
+                  />
                 </div>
               </CardContent>
+            <div className="salary_group">
+              <div className="total_salary">
+                <sup>
+                  Total Salary
+                  <br />
+                </sup>
+                  {employee.salary}
+              </div>
+              <div className="total_salary">
+                <sup>
+                  Salary based on presence
+                  <br />
+                </sup>
+                  {employee.salary}
+              </div>
+            </div>
             </Card>
+            <br />
           </div>
         </div>
       );
@@ -222,4 +220,4 @@ class Test extends Component {
   }
 }
 
-export default Test;
+export default DashboardComponent;

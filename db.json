@@ -12,6 +12,7 @@
       "photo": "https://dashboard-statics.s3.ap-south-1.amazonaws.com/hiren.jpg",
       "cont_number": "9630643649",
       "designation": "Frontend Intern",
+      "salary": "15000",
       "attendance": [
         {
           "date": "2023-06-01",
@@ -19,7 +20,7 @@
         },
         {
           "date": "2023-06-02",
-          "status": "absent"
+          "status": "present"
         },
         {
           "date": "2023-06-03",
@@ -27,11 +28,11 @@
         },
         {
           "date": "2023-06-04",
-          "status": "absent"
+          "status": "present"
         },
         {
           "date": "2023-06-05",
-          "status": "absent"
+          "status": "present"
         },
         {
           "date": "2023-06-06",
@@ -39,31 +40,31 @@
         },
         {
           "date": "2023-06-07",
-          "status": "absent"
+          "status": "present"
         },
         {
           "date": "2023-06-08",
-          "status": "absent"
+          "status": "present"
         },
         {
           "date": "2023-06-09",
-          "status": "absent"
+          "status": "present"
         },
         {
           "date": "2023-06-10",
-          "status": "absent"
+          "status": "present"
         },
         {
           "date": "2023-06-11",
-          "status": "absent"
+          "status": "present"
         },
         {
           "date": "2023-06-12",
-          "status": "absent"
+          "status": "present"
         },
         {
           "date": "2023-06-13",
-          "status": "absent"
+          "status": "present"
         },
         {
           "date": "2023-06-14",
@@ -75,7 +76,7 @@
         },
         {
           "date": "2023-06-16",
-          "status": "absent"
+          "status": "present"
         },
         {
           "date": "2023-06-17",
@@ -87,7 +88,7 @@
         },
         {
           "date": "2023-06-19",
-          "status": "absent"
+          "status": "present"
         },
         {
           "date": "2023-06-20",
@@ -104,24 +105,27 @@
       "name": "Varun Rahangdale",
       "emp_id": 121,
       "photo": "https://dashboard-statics.s3.ap-south-1.amazonaws.com/varun.jpg",
-      "cont_number": "9630643649",
-      "designation": "Trainer/Developer"
+      "cont_number": "9766255452",
+      "designation": "Trainer/Developer",
+      "salary": "45000"
     },
     {
       "id": 3,
       "name": "Anmol Chaware",
       "emp_id": 122,
       "photo": "https://dashboard-statics.s3.ap-south-1.amazonaws.com/anmol.jpg",
-      "cont_number": "9630643649",
-      "designation": "Technical Consultant"
+      "cont_number": "8793483116",
+      "designation": "Technical Consultant",
+      "salary": "55000"
     },
     {
       "id": 4,
       "name": "Kasturi Chaware",
       "emp_id": 123,
       "photo": "https://dashboard-statics.s3.ap-south-1.amazonaws.com/kasturi.png",
-      "cont_number": "9630643649",
-      "designation": "Python Trainer"
+      "cont_number": "9158060441",
+      "designation": "Python Trainer",
+      "salary": "35000"
     }
   ]
 }

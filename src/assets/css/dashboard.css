@@ -13,9 +13,9 @@ form {
 }
 form > input {
   font-family: "Signika Negative", sans-serif;
-  font-size: 25px;
-  background-color: #1976d200;
-  border: 10px solid #084b8f;
+  font-size: 21px;
+  background-color: #ffffff;
+  border: 1px solid #084b8f;
   outline: none;
   height: 25px;
   padding: 8px;
@@ -27,12 +27,12 @@ form > input {
 
 form > button {
   font-family: "Signika Negative", sans-serif;
-  font-size: 20px;
-  border: none;
-  height: 61px;
-  padding: 8px 8px 8px 0;
-  background-color: #084b8f;
-  color: aliceblue;
+  font-size: 21px;
+  border: 1px solid #084b8f;
+  border-left: none;
+  height: 43px;
+  background-color: #44b4e6;
+  color: #ffffff;
   cursor: pointer;
   border-top-left-radius: 0px;
   border-bottom-left-radius: 0px;
@@ -45,40 +45,85 @@ form > button {
   justify-content: space-around;
   margin-top: 10px;
 }
-.dashboard > .card {
+.dashboard  .card {
   padding: 30px;
-  background-color: #44b4e6;
+  background-color: #ffffff;
   height: 600px;
   width: 60%;
   border-radius: 15px;
   display: flex;
+  box-shadow:  1px 1px 20px 4px #0000001f;
 }
-.cont-font {
+/* .cont-font {
   font-family: "Signika Negative", sans-serif;
-}
+} */
 
 hr {
-  border: 1px dashed #032939;
+  border: 1px solid #aedff4;
 }
 
-.calendar {
-  /* width: 400px; */
-  background-color: #ffffff00;
+
+
+
+.calendar_display {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  text-align: center;
+}
+
+.calendar_display > div > input {
+  font-family: "Signika Negative", sans-serif;
+  font-size: 21px;
+  background-color: #44b4e6;
+  color: white;
+  border: 1px solid #084b8f;
+  border-radius: 5px;
+  width: 40%;
+  padding: 5px;
+  outline: 0;
+  position: relative;
+  float: right;
+  bottom: -35px;
+  /* left: 10px; */
 }
 
 .fc {
   width: 400px;
-  height: 388px;
-  background-color: transparent;
+  height: 394px;
   font-size: 16px;
   & .fc-daygrid-day {
     &.fc-day-today {
       background-color: #44b4e6;
-      color: aliceblue;
+      color: white;
     }
   }
 }
 
 ::-webkit-scrollbar {
   width: 0px;
+}
+label {
+  font-size: 21px;
+  float: right;
+}
+
+.css-1gq65m0-MuiPaper-root-MuiCard-root {
+  box-shadow: none!important;
+}
+
+.fc-toolbar-chunk:nth-child(3){
+  display: none !important;
+}
+
+.salary_group{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  text-align: center;
+  font-size: 21px;
+}
+
+.total_salary:first-child{
+  margin-right: 125px;
 }
