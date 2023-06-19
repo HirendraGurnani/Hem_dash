@@ -195,7 +195,6 @@ class Test extends Component {
                 <div>
                   <input
                     type="month"
-                    
                     value={this.state.selectedMonth}
                     onInput={this.handleMonthChange}
                   />
