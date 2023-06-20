@@ -21,19 +21,18 @@ class DashboardComponent extends Component {
     const year = d.getFullYear();
     const pres_month = `${year}-${month}`;
 
+
     //States
     this.state = {
       employee: null,
       index: 1,
       img: { visibility: "hidden" },
-      selectedMonth: pres_month,
-      events: [],
+      selectedMonth: pres_month
     };
   }
 
-  remove;
+  // Salary Calculation perhour
 
-  // Replace 'className' with the actual class name of the elements you want to target
 
   handleInputChange = (event) => {
     this.setState({ index: event.target.value });
@@ -41,10 +40,10 @@ class DashboardComponent extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
-    axios.get(baseURL).then((res) => {
-      const { data } = res;
-      this.setState({ employee: data[this.state.index] });
-    });
+    axios.get(baseURL)
+         .then((res) => {
+                    const { data } = res;
+                    this.setState({ employee: data[this.state.index] })}).catch(console.log("No such employee"));
   };
 
   componentDidMount() {
@@ -105,15 +104,19 @@ class DashboardComponent extends Component {
           <div className="card">
             <Card
               sx={{
-                maxWidth: 250,
-                borderRadius: "12px",
-                mt: 0,
+                maxWidth: 350,
+                height: 660,
+                borderRadius: "15px",
+                borderTopRightRadius: "0px",
+                borderBottomRightRadius: "0px",
+                mt: -3.7,
+                ml:-3.7
               }}
             >
               <CardMedia
                 component="img"
-                height="240"
-                width="200"
+                height="290"
+                width="400"
                 image={employee.photo}
                 alt={employee.name}
               />
@@ -165,6 +168,7 @@ class DashboardComponent extends Component {
               sx={{
                 width: 900,
                 boxShadow: "none",
+                mt:0
               }}
             >
               <CardContent
@@ -173,8 +177,7 @@ class DashboardComponent extends Component {
                   fontFamily: "Signika Negative",
                 }}
               >
-                <div>
-                  {/* <label>Select Month & Year</label> */}
+                <div style={{marginTop: -60}}>
                   <br />
                   <input
                     type="month"

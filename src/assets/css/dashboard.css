@@ -16,6 +16,7 @@ form > input {
   font-size: 21px;
   background-color: #ffffff;
   border: 1px solid #084b8f;
+  border-right: none;
   outline: none;
   height: 25px;
   padding: 8px;
@@ -45,25 +46,20 @@ form > button {
   justify-content: space-around;
   margin-top: 10px;
 }
-.dashboard  .card {
+.dashboard .card {
   padding: 30px;
   background-color: #ffffff;
   height: 600px;
-  width: 60%;
+  width: 55%;
   border-radius: 15px;
   display: flex;
-  box-shadow:  1px 1px 20px 4px #0000001f;
+  box-shadow: 1px 1px 20px 4px #0000001f;
 }
-/* .cont-font {
-  font-family: "Signika Negative", sans-serif;
-} */
+
 
 hr {
   border: 1px solid #aedff4;
 }
-
-
-
 
 .calendar_display {
   display: flex;
@@ -75,24 +71,26 @@ hr {
 .calendar_display > div > input {
   font-family: "Signika Negative", sans-serif;
   font-size: 21px;
-  background-color: #44b4e6;
-  color: white;
+  /* background-color: #44b4e6; */
+  color: black;
+  font-weight: 900;
   border: 1px solid #084b8f;
+  background: linear-gradient(to left, #44b4e6 9%, #ffffff 0%);
   border-radius: 5px;
-  width: 40%;
+  width: 97%;
   padding: 5px;
   outline: 0;
   position: relative;
-  float: right;
+  float: left;
   bottom: -35px;
-  /* left: 10px; */
 }
 
 .fc {
-  width: 400px;
+  width: 450px;
   height: 394px;
   font-size: 16px;
   & .fc-daygrid-day {
+    width: 50px;
     &.fc-day-today {
       background-color: #44b4e6;
       color: white;
@@ -109,14 +107,14 @@ label {
 }
 
 .css-1gq65m0-MuiPaper-root-MuiCard-root {
-  box-shadow: none!important;
+  box-shadow: none !important;
 }
 
-.fc-toolbar-chunk:nth-child(3){
+.fc-toolbar-chunk:nth-child(3) {
   display: none !important;
 }
 
-.salary_group{
+.salary_group {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -124,6 +122,10 @@ label {
   font-size: 21px;
 }
 
-.total_salary:first-child{
+.total_salary:first-child {
   margin-right: 125px;
+}
+
+input[type=month]::-webkit-calendar-picker-indicator{
+  filter: invert(100%);
 }
