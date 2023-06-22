@@ -15,10 +15,11 @@ form > input {
   font-family: "Signika Negative", sans-serif;
   font-size: 21px;
   background-color: #ffffff;
-  border: 1px solid #084b8f;
+  border: 1px solid #0e4d63;
   border-right: none;
   outline: none;
   height: 25px;
+  width: 54.525%;
   padding: 8px;
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
@@ -29,10 +30,11 @@ form > input {
 form > button {
   font-family: "Signika Negative", sans-serif;
   font-size: 21px;
-  border: 1px solid #084b8f;
+  border: 1px solid #0e4d63;
   border-left: none;
   height: 43px;
-  background-color: #44b4e6;
+  background-color: #0e4d63;
+  /* #084b8f; */
   color: #ffffff;
   cursor: pointer;
   border-top-left-radius: 0px;
@@ -44,21 +46,23 @@ form > button {
   width: 100%;
   display: flex;
   justify-content: space-around;
-  margin-top: 10px;
+  margin-top: 75px;
 }
-.dashboard .card {
+.card {
   padding: 30px;
   background-color: #ffffff;
   height: 600px;
-  width: 55%;
+  width: 60%;
   border-radius: 15px;
   display: flex;
-  box-shadow: 1px 1px 20px 4px #0000001f;
+  box-shadow: 1px 1px 8px 5px #0e3a7762;
 }
 
 
 hr {
-  border: 1px solid #aedff4;
+  border: 1px solid #237ba1;
+  width: 70%;
+  margin-right: 130px;
 }
 
 .calendar_display {
@@ -71,14 +75,13 @@ hr {
 .calendar_display > div > input {
   font-family: "Signika Negative", sans-serif;
   font-size: 21px;
-  /* background-color: #44b4e6; */
   color: black;
-  font-weight: 900;
-  border: 1px solid #084b8f;
-  background: linear-gradient(to left, #44b4e6 9%, #ffffff 0%);
+  font-weight: 500;
+  border: 1px solid #0e4d63;
+  background: linear-gradient(to left, #0e4d63 16.9%, #ffffff 0%);
   border-radius: 5px;
-  width: 97%;
-  padding: 5px;
+  width: 96.2%;
+  padding: 8px;
   outline: 0;
   position: relative;
   float: left;
@@ -92,7 +95,7 @@ hr {
   & .fc-daygrid-day {
     width: 50px;
     &.fc-day-today {
-      background-color: #44b4e6;
+      background-color: #0e4d63;
       color: white;
     }
   }
@@ -101,10 +104,7 @@ hr {
 ::-webkit-scrollbar {
   width: 0px;
 }
-label {
-  font-size: 21px;
-  float: right;
-}
+
 
 .css-1gq65m0-MuiPaper-root-MuiCard-root {
   box-shadow: none !important;
@@ -117,15 +117,20 @@ label {
 .salary_group {
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content:space-evenly ;
   text-align: center;
   font-size: 21px;
 }
 
 .total_salary:first-child {
-  margin-right: 125px;
+  margin-right: -100px;
 }
 
 input[type=month]::-webkit-calendar-picker-indicator{
   filter: invert(100%);
+  cursor: pointer;
+  width: 39px;
+}
+table, th, td{
+  border: 1px solid #0e4d63 !important;
 }

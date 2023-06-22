@@ -21,17 +21,18 @@ class DashboardComponent extends Component {
     const year = d.getFullYear();
     const pres_month = `${year}-${month}`;
 
-
     //States
     this.state = {
       employee: null,
       index: 1,
       img: { visibility: "hidden" },
-      selectedMonth: pres_month
+      selectedMonth: pres_month,
+      attendance: null,
+      presentCount: 0,
+      absentCount: 0,
+      halfDayCount: 0,
     };
   }
-
-  // Salary Calculation perhour
 
 
   handleInputChange = (event) => {
@@ -40,10 +41,30 @@ class DashboardComponent extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
-    axios.get(baseURL)
-         .then((res) => {
-                    const { data } = res;
-                    this.setState({ employee: data[this.state.index] })}).catch(console.log("No such employee"));
+    axios
+      .get(baseURL)
+      .then((res) => {
+        const { data } = res;
+        const employee = data[this.state.index];
+        const attendance = employee.attendance;
+        const presentCount = attendance.filter(
+          (entry) => entry.status === "present"
+        ).length;
+        const absentCount = attendance.filter(
+          (entry) => entry.status === "absent"
+        ).length;
+        const halfDayCount = attendance.filter(
+          (entry) => entry.status === "half_day"
+        ).length;
+        this.setState({
+          employee: employee,
+          attendance: attendance,
+          presentCount: presentCount,
+          absentCount: absentCount,
+          halfDayCount: halfDayCount,
+        });
+      })
+      .catch((error) => console.log(error));
   };
 
   componentDidMount() {
@@ -66,72 +87,64 @@ class DashboardComponent extends Component {
   };
 
   render() {
-    const { employee } = this.state;
+    const { employee, halfDayCount, attendance, presentCount, absentCount } =
+      this.state;
+    console.log(this.state.index);
     if (!employee) return null;
 
     let dashboard_comp;
-    let dash_form;
 
     if (employee.id === 0) {
-      dash_form = (
-        <form onSubmit={this.handleSubmit}>
-          <input
-            type="number"
-            value={this.state.index}
-            onChange={this.handleInputChange}
-          />
-          <button type="submit">Submit</button>
-        </form>
-      );
       dashboard_comp = (
-        <span className="dashboard" style={{ color: "red" }}>
-          Type a value to see the details of employees
-        </span>
+        <div>
+          <form onSubmit={this.handleSubmit}>
+            <input
+              type="number"
+              value={this.state.index}
+              onChange={this.handleInputChange}
+            />
+            <button type="submit">Submit</button>
+          </form>
+          <span className="dashboard" style={{ color: "red" }}>
+            Type a value to see the details of employees
+          </span>
+        </div>
       );
     } else {
-      dash_form = (
-        <form onSubmit={this.handleSubmit}>
-          <input
-            type="number"
-            value={this.state.index}
-            onChange={this.handleInputChange}
-          />
-          <button type="submit">Submit</button>
-        </form>
-      );
       dashboard_comp = (
         <div className="dashboard">
           <div className="card">
             <Card
               sx={{
-                maxWidth: 350,
+                maxWidth: 290,
                 height: 660,
                 borderRadius: "15px",
                 borderTopRightRadius: "0px",
                 borderBottomRightRadius: "0px",
                 mt: -3.7,
-                ml:-3.7
+                ml: -3.7,
               }}
             >
               <CardMedia
                 component="img"
-                height="290"
-                width="400"
+                height="250"
+                width="350"
                 image={employee.photo}
                 alt={employee.name}
               />
               <CardContent
                 sx={{
-                  backgroundColor: "#44b4e6",
+                  backgroundColor: "#0e4d63",
                   fontFamily: "Signika Negative",
                   color: "#ffffff",
+                  width: 350,
+                  height: 370,
                 }}
               >
                 <Typography gutterBottom variant="h6" component="div">
                   <div>
                     <sup>Name</sup>
                     <br />
-
                     {employee.name}
                   </div>
                 </Typography>
@@ -140,7 +153,6 @@ class DashboardComponent extends Component {
                   <div>
                     <sup>Employee ID</sup>
                     <br />
-
                     {employee.emp_id}
                   </div>
                 </Typography>
@@ -149,7 +161,6 @@ class DashboardComponent extends Component {
                   <div>
                     <sup>Contact Number</sup>
                     <br />
-
                     {employee.cont_number}
                   </div>
                 </Typography>
@@ -158,7 +169,6 @@ class DashboardComponent extends Component {
                   <div>
                     <sup>Designation</sup>
                     <br />
-
                     {employee.designation}
                   </div>
                 </Typography>
@@ -168,22 +178,30 @@ class DashboardComponent extends Component {
               sx={{
                 width: 900,
                 boxShadow: "none",
-                mt:0
+                mt: 0,
               }}
             >
+              <form onSubmit={this.handleSubmit}>
+                <input
+                  type="number"
+                  value={this.state.index}
+                  onChange={this.handleInputChange}
+                />
+                <button type="submit">Submit</button>
+              </form>
               <CardContent
                 className="calendar_display"
                 sx={{
                   fontFamily: "Signika Negative",
                 }}
               >
-                <div style={{marginTop: -60}}>
-                  <br />
+                <div style={{ marginTop: 0 }}>
                   <input
                     type="month"
                     value={this.state.selectedMonth}
                     onInput={this.handleMonthChange}
                   />
+                  <br />
                   <FullCalendar
                     ref={this.calendarRef}
                     plugins={[dayGridPlugin]}
@@ -191,35 +209,82 @@ class DashboardComponent extends Component {
                   />
                 </div>
               </CardContent>
-            <div className="salary_group">
-              <div className="total_salary">
-                <sup>
-                  Total Salary
-                  <br />
-                </sup>
-                  {employee.salary}
-              </div>
-              <div className="total_salary">
-                <sup>
-                  Salary based on presence
-                  <br />
-                </sup>
-                  {employee.salary}
-              </div>
-            </div>
             </Card>
-            <br />
+            <Card
+              sx={{
+                maxWidth: 350,
+                height: 660,
+                borderRadius: "15px",
+                borderTopLeftRadius: "0px",
+                borderBottomLeftRadius: "0px",
+                mt: -3.7,
+                mr: -3.75,
+              }}
+            >
+              <CardContent
+                sx={{
+                  backgroundColor: "#0e4d63",
+                  fontFamily: "Signika Negative",
+                  color: "#ffffff",
+                  height: 620,
+                  width: 350,
+                }}
+              >
+                <Typography gutterBottom variant="h6" component="div">
+                  <div>
+                    <sup>Salary</sup>
+                    <br />
+                    {employee.salary}
+                  </div>
+                </Typography>
+                <hr />
+                <Typography gutterBottom variant="h6" component="div">
+                  <div>
+                    <sup>Employee ID</sup>
+                    <br />
+                    {employee.emp_id}
+                  </div>
+                </Typography>
+                <hr />
+                <Typography gutterBottom variant="h6" component="div">
+                  <div>
+                    <sup>Employee ID</sup>
+                    <br />
+                    {employee.emp_id}
+                  </div>
+                </Typography>
+                <hr />
+                <Typography gutterBottom variant="h6" component="div">
+                  <div>
+                    <sup>No. of Days Present</sup>
+                    <br />
+                    {presentCount}
+                  </div>
+                </Typography>
+                <hr />
+                <Typography gutterBottom variant="h6" component="div">
+                  <div>
+                    <sup>Half-Days Taken</sup>
+                    <br />
+                    {halfDayCount}
+                  </div>
+                </Typography>
+                <hr />
+                <Typography gutterBottom variant="h6" component="div">
+                  <div>
+                    <sup>Leaves Taken</sup>
+                    <br />
+                    {absentCount}
+                  </div>
+                </Typography>
+              </CardContent>
+            </Card>
           </div>
         </div>
       );
     }
 
-    return (
-      <div>
-        {dash_form}
-        {dashboard_comp}
-      </div>
-    );
+    return <div>{dashboard_comp}</div>;
   }
 }
 
