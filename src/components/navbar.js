@@ -12,12 +12,12 @@ function Navbar() {
         <Container maxWidth="xl">
           <div className="App header">
             <img className="nav_img" src={hematite} alt="Hematite" />
-            &emsp;
+            &emsp;&emsp;
             <h1 className="title">
               Hematite & iExcel <br />
               Employee Dashboard
             </h1>
-            &emsp;
+            &emsp;&emsp;
             <img className="nav_img" src={iexcel} alt="Hematite" />
           </div>
         </Container>
