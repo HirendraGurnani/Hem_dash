@@ -1,9 +1,7 @@
 {
   "posts": [
     {
-      "id": 0,
-      "name": null,
-      "age": null
+      "id": 0
     },
     {
       "id": 1,
@@ -13,6 +11,232 @@
       "cont_number": "9630643649",
       "designation": "Frontend Intern",
       "salary": "15000",
+      "attendance": [
+        {
+          "date": "2023-06-01",
+          "status": "present"
+        },
+        {
+          "date": "2023-06-02",
+          "status": "present"
+        },
+        {
+          "date": "2023-06-03",
+          "status": "present"
+        },
+        {
+          "date": "2023-06-04",
+          "status": "present"
+        },
+        {
+          "date": "2023-06-05",
+          "status": "present"
+        },
+        {
+          "date": "2023-06-06",
+          "status": "half_day"
+        },
+        {
+          "date": "2023-06-07",
+          "status": "present"
+        },
+        {
+          "date": "2023-06-08",
+          "status": "present"
+        },
+        {
+          "date": "2023-06-09",
+          "status": "present"
+        },
+        {
+          "date": "2023-06-10",
+          "status": "present"
+        },
+        {
+          "date": "2023-06-11",
+          "status": "present"
+        },
+        {
+          "date": "2023-06-12",
+          "status": "present"
+        },
+        {
+          "date": "2023-06-13",
+          "status": "present"
+        },
+        {
+          "date": "2023-06-14",
+          "status": "absent"
+        },
+        {
+          "date": "2023-06-15",
+          "status": "absent"
+        },
+        {
+          "date": "2023-06-16",
+          "status": "present"
+        },
+        {
+          "date": "2023-06-17",
+          "status": "absent"
+        },
+        {
+          "date": "2023-06-18",
+          "status": "absent"
+        },
+        {
+          "date": "2023-06-19",
+          "status": "present"
+        },
+        {
+          "date": "2023-06-20",
+          "status": "absent"
+        },
+        {
+          "date": "2023-06-21",
+          "status": "absent"
+        },
+        {
+          "date": "2023-06-22",
+          "status": "absent"
+        },
+        {
+          "date": "2023-06-23",
+          "status": "absent"
+        },
+        {
+          "date": "2023-06-24",
+          "status": "absent"
+        },
+        {
+          "date": "2023-06-25",
+          "status": "absent"
+        },
+        {
+          "date": "2023-06-26",
+          "status": "absent"
+        },
+        {
+          "date": "2023-06-27",
+          "status": "absent"
+        },
+        {
+          "date": "2023-06-28",
+          "status": "absent"
+        },
+        {
+          "date": "2023-06-29",
+          "status": "absent"
+        },
+        {
+          "date": "2023-06-30",
+          "status": "absent"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Varun Rahangdale",
+      "emp_id": 121,
+      "photo": "https://dashboard-statics.s3.ap-south-1.amazonaws.com/varun.jpg",
+      "cont_number": "9766255452",
+      "designation": "Trainer/Developer",
+      "salary": "45000",
+      "attendance": [
+        {
+          "date": "2023-06-01",
+          "status": "present"
+        },
+        {
+          "date": "2023-06-02",
+          "status": "present"
+        },
+        {
+          "date": "2023-06-03",
+          "status": "present"
+        },
+        {
+          "date": "2023-06-04",
+          "status": "present"
+        },
+        {
+          "date": "2023-06-05",
+          "status": "present"
+        },
+        {
+          "date": "2023-06-06",
+          "status": "absent"
+        },
+        {
+          "date": "2023-06-07",
+          "status": "present"
+        },
+        {
+          "date": "2023-06-08",
+          "status": "present"
+        },
+        {
+          "date": "2023-06-09",
+          "status": "present"
+        },
+        {
+          "date": "2023-06-10",
+          "status": "present"
+        },
+        {
+          "date": "2023-06-11",
+          "status": "present"
+        },
+        {
+          "date": "2023-06-12",
+          "status": "present"
+        },
+        {
+          "date": "2023-06-13",
+          "status": "present"
+        },
+        {
+          "date": "2023-06-14",
+          "status": "absent"
+        },
+        {
+          "date": "2023-06-15",
+          "status": "absent"
+        },
+        {
+          "date": "2023-06-16",
+          "status": "present"
+        },
+        {
+          "date": "2023-06-17",
+          "status": "absent"
+        },
+        {
+          "date": "2023-06-18",
+          "status": "absent"
+        },
+        {
+          "date": "2023-06-19",
+          "status": "present"
+        },
+        {
+          "date": "2023-06-20",
+          "status": "absent"
+        },
+        {
+          "date": "2023-06-21",
+          "status": "absent"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Anmol Chaware",
+      "emp_id": 122,
+      "photo": "https://dashboard-statics.s3.ap-south-1.amazonaws.com/anmol.jpg",
+      "cont_number": "8793483116",
+      "designation": "Technical Consultant",
+      "salary": "55000",
       "attendance": [
         {
           "date": "2023-06-01",
@@ -101,31 +325,98 @@
       ]
     },
     {
-      "id": 2,
-      "name": "Varun Rahangdale",
-      "emp_id": 121,
-      "photo": "https://dashboard-statics.s3.ap-south-1.amazonaws.com/varun.jpg",
-      "cont_number": "9766255452",
-      "designation": "Trainer/Developer",
-      "salary": "45000"
-    },
-    {
-      "id": 3,
-      "name": "Anmol Chaware",
-      "emp_id": 122,
-      "photo": "https://dashboard-statics.s3.ap-south-1.amazonaws.com/anmol.jpg",
-      "cont_number": "8793483116",
-      "designation": "Technical Consultant",
-      "salary": "55000"
-    },
-    {
       "id": 4,
       "name": "Kasturi Chaware",
       "emp_id": 123,
       "photo": "https://dashboard-statics.s3.ap-south-1.amazonaws.com/kasturi.png",
       "cont_number": "9158060441",
       "designation": "Python Trainer",
-      "salary": "35000"
+      "salary": "35000","attendance": [
+        {
+          "date": "2023-06-01",
+          "status": "present"
+        },
+        {
+          "date": "2023-06-02",
+          "status": "present"
+        },
+        {
+          "date": "2023-06-03",
+          "status": "present"
+        },
+        {
+          "date": "2023-06-04",
+          "status": "present"
+        },
+        {
+          "date": "2023-06-05",
+          "status": "present"
+        },
+        {
+          "date": "2023-06-06",
+          "status": "absent"
+        },
+        {
+          "date": "2023-06-07",
+          "status": "present"
+        },
+        {
+          "date": "2023-06-08",
+          "status": "present"
+        },
+        {
+          "date": "2023-06-09",
+          "status": "present"
+        },
+        {
+          "date": "2023-06-10",
+          "status": "present"
+        },
+        {
+          "date": "2023-06-11",
+          "status": "present"
+        },
+        {
+          "date": "2023-06-12",
+          "status": "present"
+        },
+        {
+          "date": "2023-06-13",
+          "status": "present"
+        },
+        {
+          "date": "2023-06-14",
+          "status": "absent"
+        },
+        {
+          "date": "2023-06-15",
+          "status": "absent"
+        },
+        {
+          "date": "2023-06-16",
+          "status": "present"
+        },
+        {
+          "date": "2023-06-17",
+          "status": "absent"
+        },
+        {
+          "date": "2023-06-18",
+          "status": "absent"
+        },
+        {
+          "date": "2023-06-19",
+          "status": "present"
+        },
+        {
+          "date": "2023-06-20",
+          "status": "absent"
+        },
+        {
+          "date": "2023-06-11",
+          "status": "absent"
+        }
+      ]
     }
   ]
 }
