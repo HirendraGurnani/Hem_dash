@@ -31,9 +31,12 @@ class DashboardComponent extends Component {
       presentCount: 0,
       absentCount: 0,
       halfDayCount: 0,
+      salary: 0,
+      salary_acc_present: 0,
+      salary_acc_absent: 0,
+      salary_acc_halfDay: 0
     };
   }
-
 
   handleInputChange = (event) => {
     this.setState({ index: event.target.value });
@@ -47,6 +50,7 @@ class DashboardComponent extends Component {
         const { data } = res;
         const employee = data[this.state.index];
         const attendance = employee.attendance;
+        
         const presentCount = attendance.filter(
           (entry) => entry.status === "present"
         ).length;
@@ -56,12 +60,23 @@ class DashboardComponent extends Component {
         const halfDayCount = attendance.filter(
           (entry) => entry.status === "half_day"
         ).length;
+        const salary = employee.salary;
+        let salary_per_hour = salary / 234;
+        let salary_per_day = salary_per_hour * 9;
+        let salary_acc_present = (salary_per_day * presentCount).toFixed(0);
+        let salary_acc_absent = salary-salary_acc_present-((salary_per_day) * halfDayCount).toFixed(0)
+        let salary_acc_halfDay = ((salary_per_day/2) * halfDayCount).toFixed(0);
+        console.log(salary_acc_halfDay);
         this.setState({
           employee: employee,
           attendance: attendance,
           presentCount: presentCount,
           absentCount: absentCount,
           halfDayCount: halfDayCount,
+          salary: salary,
+          salary_acc_present: salary_acc_present,
+          salary_acc_absent: salary_acc_absent,
+          salary_acc_halfDay: salary_acc_halfDay
         });
       })
       .catch((error) => console.log(error));
@@ -87,9 +102,16 @@ class DashboardComponent extends Component {
   };
 
   render() {
-    const { employee, halfDayCount, attendance, presentCount, absentCount } =
-      this.state;
-    console.log(this.state.index);
+    const {
+      employee,
+      halfDayCount,
+      presentCount,
+      absentCount,
+      salary,
+      salary_acc_present,
+      salary_acc_absent,
+      salary_acc_halfDay
+    } = this.state;
     if (!employee) return null;
 
     let dashboard_comp;
@@ -230,31 +252,7 @@ class DashboardComponent extends Component {
                   width: 350,
                 }}
               >
-                <Typography gutterBottom variant="h6" component="div">
-                  <div>
-                    <sup>Salary</sup>
-                    <br />
-                    {employee.salary}
-                  </div>
-                </Typography>
-                <hr />
-                <Typography gutterBottom variant="h6" component="div">
-                  <div>
-                    <sup>Employee ID</sup>
-                    <br />
-                    {employee.emp_id}
-                  </div>
-                </Typography>
-                <hr />
-                <Typography gutterBottom variant="h6" component="div">
-                  <div>
-                    <sup>Employee ID</sup>
-                    <br />
-                    {employee.emp_id}
-                  </div>
-                </Typography>
-                <hr />
-                <Typography gutterBottom variant="h6" component="div">
+                <Typography gutterBottom variant="h6" component="div" sx={{mt:3.5}}>
                   <div>
                     <sup>No. of Days Present</sup>
                     <br />
@@ -275,6 +273,38 @@ class DashboardComponent extends Component {
                     <sup>Leaves Taken</sup>
                     <br />
                     {absentCount}
+                  </div>
+                </Typography>
+                <hr />
+                <Typography gutterBottom variant="h6" component="div">
+                  <div>
+                    <sup>Total Salary</sup>
+                    <br />
+                    Rs. {salary} /-
+                  </div>
+                </Typography>
+                <hr />
+                <Typography gutterBottom variant="h6" component="div">
+                  <div>
+                    <sup>Salary Paid For Presence</sup>
+                    <br />
+                    Rs. {salary_acc_present} /-
+                  </div>
+                </Typography>
+                <hr />
+                <Typography gutterBottom variant="h6" component="div">
+                  <div>
+                    <sup>Salary Not Paid For Absence</sup>
+                    <br />
+                    Rs. {salary_acc_absent} /-
+                  </div>
+                </Typography>
+                <hr />
+                <Typography gutterBottom variant="h6" component="div">
+                  <div>
+                    <sup>Salary Paid For Half-Day</sup>
+                    <br />
+                    Rs. {salary_acc_halfDay} /-
                   </div>
                 </Typography>
               </CardContent>
