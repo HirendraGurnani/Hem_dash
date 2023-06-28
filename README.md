@@ -1,9 +1,9 @@
 # How to run this project
 
-## Frontend
+## 1. Frontend
 ### In your working directory
-1. npm start
+npm start
 
-## Backend Server (JSON-server)
+## 2. Backend Server (JSON-server)
 ### In your working directory
-2. json-server --watch -p 4000 db.json
+json-server --watch -p 4000 db.json
