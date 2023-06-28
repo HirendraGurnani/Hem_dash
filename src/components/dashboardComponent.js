@@ -96,7 +96,7 @@ class DashboardComponent extends Component {
     const selectedMonth = e.target.value;
     this.setState({ selectedMonth }, this.updateCalendar);
   };
-
+  
   updateCalendar = () => {
     const { selectedMonth } = this.state;
     const [year, month] = selectedMonth.split("-");
@@ -108,6 +108,7 @@ class DashboardComponent extends Component {
   };
 
   render() {
+    //destructuring state
     const {
       employee,
       halfDayCount,
@@ -118,9 +119,10 @@ class DashboardComponent extends Component {
       salary_acc_absent,
       salary_acc_halfDay,
     } = this.state;
-    // console.log(employee.length());
+
     if (!employee) return null;
 
+    //conditional rendering
     let dashboard_comp;
 
     if (employee.id === 0) {
@@ -325,6 +327,8 @@ class DashboardComponent extends Component {
         </div>
       );
     }
+
+    //returning the component
 
     return <div>{dashboard_comp}</div>;
   }
