@@ -1,5 +1,8 @@
 # How to run this project
 
+## Installation
+npm i
+
 ## 1. Frontend
 ### In your working directory
 npm start
