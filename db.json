@@ -145,7 +145,7 @@
       "attendance": [
         {
           "date": "2023-06-01",
-          "status": "present"
+          "status": "absent"
         },
         {
           "date": "2023-06-02",
@@ -157,15 +157,15 @@
         },
         {
           "date": "2023-06-04",
-          "status": "present"
+          "status": "holiday"
         },
         {
           "date": "2023-06-05",
-          "status": "present"
+          "status": "half_day"
         },
         {
           "date": "2023-06-06",
-          "status": "absent"
+          "status": "present"
         },
         {
           "date": "2023-06-07",
@@ -173,11 +173,11 @@
         },
         {
           "date": "2023-06-08",
-          "status": "present"
+          "status": "half_day"
         },
         {
           "date": "2023-06-09",
-          "status": "present"
+          "status": "half_day"
         },
         {
           "date": "2023-06-10",
@@ -185,7 +185,7 @@
         },
         {
           "date": "2023-06-11",
-          "status": "present"
+          "status": "holiday"
         },
         {
           "date": "2023-06-12",
@@ -201,7 +201,7 @@
         },
         {
           "date": "2023-06-15",
-          "status": "half_day"
+          "status": "absent"
         },
         {
           "date": "2023-06-16",
@@ -209,11 +209,11 @@
         },
         {
           "date": "2023-06-17",
-          "status": "half_day"
+          "status": "absent"
         },
         {
           "date": "2023-06-18",
-          "status": "absent"
+          "status": "holiday"
         },
         {
           "date": "2023-06-19",
@@ -225,6 +225,42 @@
         },
         {
           "date": "2023-06-21",
+          "status": "absent"
+        },
+        {
+          "date": "2023-06-22",
+          "status": "present"
+        },
+        {
+          "date": "2023-06-23",
+          "status": "present"
+        },
+        {
+          "date": "2023-06-24",
+          "status": "present"
+        },
+        {
+          "date": "2023-06-25",
+          "status": "holiday"
+        },
+        {
+          "date": "2023-06-26",
+          "status": "present"
+        },
+        {
+          "date": "2023-06-27",
+          "status": "absent"
+        },
+        {
+          "date": "2023-06-28",
+          "status": "absent"
+        },
+        {
+          "date": "2023-06-29",
+          "status": "absent"
+        },
+        {
+          "date": "2023-06-30",
           "status": "absent"
         }
       ]
@@ -240,7 +276,7 @@
       "attendance": [
         {
           "date": "2023-06-01",
-          "status": "present"
+          "status": "absent"
         },
         {
           "date": "2023-06-02",
@@ -252,15 +288,15 @@
         },
         {
           "date": "2023-06-04",
-          "status": "present"
+          "status": "holiday"
         },
         {
           "date": "2023-06-05",
-          "status": "present"
+          "status": "half_day"
         },
         {
           "date": "2023-06-06",
-          "status": "absent"
+          "status": "present"
         },
         {
           "date": "2023-06-07",
@@ -268,11 +304,11 @@
         },
         {
           "date": "2023-06-08",
-          "status": "present"
+          "status": "half_day"
         },
         {
           "date": "2023-06-09",
-          "status": "present"
+          "status": "half_day"
         },
         {
           "date": "2023-06-10",
@@ -280,7 +316,7 @@
         },
         {
           "date": "2023-06-11",
-          "status": "present"
+          "status": "holiday"
         },
         {
           "date": "2023-06-12",
@@ -308,7 +344,7 @@
         },
         {
           "date": "2023-06-18",
-          "status": "absent"
+          "status": "holiday"
         },
         {
           "date": "2023-06-19",
@@ -319,7 +355,43 @@
           "status": "absent"
         },
         {
-          "date": "2023-06-11",
+          "date": "2023-06-21",
+          "status": "absent"
+        },
+        {
+          "date": "2023-06-22",
+          "status": "present"
+        },
+        {
+          "date": "2023-06-23",
+          "status": "present"
+        },
+        {
+          "date": "2023-06-24",
+          "status": "present"
+        },
+        {
+          "date": "2023-06-25",
+          "status": "holiday"
+        },
+        {
+          "date": "2023-06-26",
+          "status": "present"
+        },
+        {
+          "date": "2023-06-27",
+          "status": "absent"
+        },
+        {
+          "date": "2023-06-28",
+          "status": "absent"
+        },
+        {
+          "date": "2023-06-29",
+          "status": "absent"
+        },
+        {
+          "date": "2023-06-30",
           "status": "absent"
         }
       ]
@@ -331,10 +403,11 @@
       "photo": "https://dashboard-statics.s3.ap-south-1.amazonaws.com/kasturi.png",
       "cont_number": "9158060441",
       "designation": "Python Trainer",
-      "salary": "35000","attendance": [
+      "salary": "35000",
+      "attendance": [
         {
           "date": "2023-06-01",
-          "status": "present"
+          "status": "absent"
         },
         {
           "date": "2023-06-02",
@@ -346,15 +419,15 @@
         },
         {
           "date": "2023-06-04",
-          "status": "present"
+          "status": "holiday"
         },
         {
           "date": "2023-06-05",
-          "status": "present"
+          "status": "half_day"
         },
         {
           "date": "2023-06-06",
-          "status": "absent"
+          "status": "present"
         },
         {
           "date": "2023-06-07",
@@ -362,11 +435,11 @@
         },
         {
           "date": "2023-06-08",
-          "status": "present"
+          "status": "half_day"
         },
         {
           "date": "2023-06-09",
-          "status": "present"
+          "status": "half_day"
         },
         {
           "date": "2023-06-10",
@@ -374,7 +447,7 @@
         },
         {
           "date": "2023-06-11",
-          "status": "present"
+          "status": "holiday"
         },
         {
           "date": "2023-06-12",
@@ -402,7 +475,7 @@
         },
         {
           "date": "2023-06-18",
-          "status": "absent"
+          "status": "holiday"
         },
         {
           "date": "2023-06-19",
@@ -413,7 +486,43 @@
           "status": "absent"
         },
         {
-          "date": "2023-06-11",
+          "date": "2023-06-21",
+          "status": "absent"
+        },
+        {
+          "date": "2023-06-22",
+          "status": "present"
+        },
+        {
+          "date": "2023-06-23",
+          "status": "present"
+        },
+        {
+          "date": "2023-06-24",
+          "status": "present"
+        },
+        {
+          "date": "2023-06-25",
+          "status": "holiday"
+        },
+        {
+          "date": "2023-06-26",
+          "status": "present"
+        },
+        {
+          "date": "2023-06-27",
+          "status": "absent"
+        },
+        {
+          "date": "2023-06-28",
+          "status": "absent"
+        },
+        {
+          "date": "2023-06-29",
+          "status": "absent"
+        },
+        {
+          "date": "2023-06-30",
           "status": "absent"
         }
       ]

@@ -25,7 +25,6 @@ class DashboardComponent extends Component {
     this.state = {
       employee: null,
       index: 1,
-      img: { visibility: "hidden" },
       selectedMonth: pres_month,
       attendance: null,
       presentCount: 0,
@@ -34,7 +33,7 @@ class DashboardComponent extends Component {
       salary: 0,
       salary_acc_present: 0,
       salary_acc_absent: 0,
-      salary_acc_halfDay: 0
+      salary_acc_halfDay: 0,
     };
   }
 
@@ -50,7 +49,7 @@ class DashboardComponent extends Component {
         const { data } = res;
         const employee = data[this.state.index];
         const attendance = employee.attendance;
-        
+
         const presentCount = attendance.filter(
           (entry) => entry.status === "present"
         ).length;
@@ -60,13 +59,20 @@ class DashboardComponent extends Component {
         const halfDayCount = attendance.filter(
           (entry) => entry.status === "half_day"
         ).length;
+
+        //Salary Calculation
         const salary = employee.salary;
         let salary_per_hour = salary / 234;
         let salary_per_day = salary_per_hour * 9;
         let salary_acc_present = (salary_per_day * presentCount).toFixed(0);
-        let salary_acc_absent = salary-salary_acc_present-((salary_per_day) * halfDayCount).toFixed(0)
-        let salary_acc_halfDay = ((salary_per_day/2) * halfDayCount).toFixed(0);
-        console.log(salary_acc_halfDay);
+        let salary_acc_absent =
+          salary -
+          salary_acc_present -
+          (salary_per_day * halfDayCount).toFixed(0);
+        let salary_acc_halfDay = ((salary_per_day / 2) * halfDayCount).toFixed(
+          0
+        );
+        //state manipulation
         this.setState({
           employee: employee,
           attendance: attendance,
@@ -76,7 +82,7 @@ class DashboardComponent extends Component {
           salary: salary,
           salary_acc_present: salary_acc_present,
           salary_acc_absent: salary_acc_absent,
-          salary_acc_halfDay: salary_acc_halfDay
+          salary_acc_halfDay: salary_acc_halfDay,
         });
       })
       .catch((error) => console.log(error));
@@ -110,8 +116,9 @@ class DashboardComponent extends Component {
       salary,
       salary_acc_present,
       salary_acc_absent,
-      salary_acc_halfDay
+      salary_acc_halfDay,
     } = this.state;
+    // console.log(employee.length());
     if (!employee) return null;
 
     let dashboard_comp;
@@ -252,7 +259,12 @@ class DashboardComponent extends Component {
                   width: 350,
                 }}
               >
-                <Typography gutterBottom variant="h6" component="div" sx={{mt:3.5}}>
+                <Typography
+                  gutterBottom
+                  variant="h6"
+                  component="div"
+                  sx={{ mt: 3.5 }}
+                >
                   <div>
                     <sup>No. of Days Present</sup>
                     <br />
