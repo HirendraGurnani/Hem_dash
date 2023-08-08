@@ -4,5 +4,5 @@
   
 [[redirects]]
   from = "/api/*"
-  to = "https://employeedash.netlify.app/posts/:splat"
+  to = "https://employeedash.netlify.app/posts/"
   status = 200
