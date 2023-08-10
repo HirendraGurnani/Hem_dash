@@ -8,7 +8,7 @@ import "../assets/css/navbar.css";
 function Navbar() {
   return (
     <>
-      <AppBar position="static" sx={{ height: 150, backgroundColor: '#ffffff' }}>
+      <AppBar position="static" sx={{ height: 80, backgroundColor: '#ffffff' }}>
         <Container maxWidth="xl">
           <div className="App header">
             {/* <img className="nav_img" src={hematite} alt="Hematite" />
