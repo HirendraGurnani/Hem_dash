@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/static/css/main.16645166.css",
+    "main.js": "/static/js/main.40114896.js",
+    "static/js/787.545aecf5.chunk.js": "/static/js/787.545aecf5.chunk.js",
+    "static/media/hemtatite.png": "/static/media/hemtatite.137518ffd681e864ea6f.png",
+    "static/media/iexcel.png": "/static/media/iexcel.3caa2071e94471597633.png",
+    "index.html": "/index.html",
+    "main.16645166.css.map": "/static/css/main.16645166.css.map",
+    "main.40114896.js.map": "/static/js/main.40114896.js.map",
+    "787.545aecf5.chunk.js.map": "/static/js/787.545aecf5.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.16645166.css",
+    "static/js/main.40114896.js"
+  ]
+}
