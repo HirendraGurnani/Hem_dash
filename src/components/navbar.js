@@ -11,14 +11,14 @@ function Navbar() {
       <AppBar position="static" sx={{ height: 150, backgroundColor: '#ffffff' }}>
         <Container maxWidth="xl">
           <div className="App header">
-            <img className="nav_img" src={hematite} alt="Hematite" />
-            &emsp;&emsp;
+            {/* <img className="nav_img" src={hematite} alt="Hematite" />
+            &emsp;&emsp; */}
             <h1 className="title">
-              Hematite & iExcel <br />
+              {/* Hematite & iExcel <br /> */}
               Employee Dashboard
             </h1>
-            &emsp;&emsp;
-            <img className="nav_img" src={iexcel} alt="Hematite" />
+            {/* &emsp;&emsp;
+            <img className="nav_img" src={iexcel} alt="Hematite" /> */}
           </div>
         </Container>
       </AppBar>
