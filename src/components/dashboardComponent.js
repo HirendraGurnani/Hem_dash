@@ -8,7 +8,7 @@ import Typography from "@mui/material/Typography";
 import FullCalendar from "@fullcalendar/react";
 import dayGridPlugin from "@fullcalendar/daygrid";
 
-var baseURL = "https://endurable-dog-lion.glitch.me/posts";
+var baseURL = "http://endurable-dog-lion.glitch.me/posts";
 
 class DashboardComponent extends Component {
   constructor(props) {
