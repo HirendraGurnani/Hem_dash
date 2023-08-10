@@ -8,7 +8,7 @@ import Typography from "@mui/material/Typography";
 import FullCalendar from "@fullcalendar/react";
 import dayGridPlugin from "@fullcalendar/daygrid";
 
-var baseURL = "https://employeedash.netlify.app/posts";
+var baseURL = "https://functional-factual-owner.glitch.me/posts";
 
 class DashboardComponent extends Component {
   constructor(props) {
