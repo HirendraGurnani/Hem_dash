@@ -1,8 +1,8 @@
 import * as React from "react";
 import AppBar from "@mui/material/AppBar";
 import Container from "@mui/material/Container";
-import hematite from '../assets/imgs/logo/hemtatite.png'
-import iexcel from '../assets/imgs/logo/iexcel.png'
+// import hematite from '../assets/imgs/logo/hemtatite.png'
+// import iexcel from '../assets/imgs/logo/iexcel.png'
 import "../assets/css/navbar.css";
 
 function Navbar() {
