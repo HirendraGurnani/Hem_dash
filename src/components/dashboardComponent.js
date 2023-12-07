@@ -91,7 +91,7 @@ class DashboardComponent extends Component {
   keepApiAwake = () => {
     setInterval(() => {
       axios.get(baseURL).catch((error) => console.log(error));
-    }, 6000);
+    }, 1000);
   };
 
   componentDidMount() {
