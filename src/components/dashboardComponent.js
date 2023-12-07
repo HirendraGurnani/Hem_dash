@@ -17,7 +17,7 @@ class DashboardComponent extends Component {
 
     //Managing Present date
     const d = new Date();
-    const month = (d.getMonth()).toString().padStart(2, "0");
+    const month = d.getMonth().toString().padStart(2, "0");
     const year = d.getFullYear();
     const pres_month = `${year}-${month}`;
 
@@ -88,15 +88,22 @@ class DashboardComponent extends Component {
       .catch((error) => console.log(error));
   };
 
+  keepApiAwake = () => {
+    setInterval(() => {
+      axios.get(baseURL).catch((error) => console.log(error));
+    }, 6000);
+  };
+
   componentDidMount() {
     this.handleSubmit({ preventDefault: () => {} });
+    this.keepApiAwake();
   }
 
   handleMonthChange = (e) => {
     const selectedMonth = e.target.value;
     this.setState({ selectedMonth }, this.updateCalendar);
   };
-  
+
   updateCalendar = () => {
     const { selectedMonth } = this.state;
     const [year, month] = selectedMonth.split("-");
