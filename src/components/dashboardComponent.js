@@ -350,10 +350,9 @@ class DashboardComponent extends Component {
     return (
       <div>
         {isLoading ? (
-          <h2>
-            Important Note: The dashboard may take some time to load for the
-            first time
-          </h2>
+          <center>
+            <h2>The dashboard may take some time to load</h2>
+          </center>
         ) : (
           <div>{dashboard_comp}</div>
         )}
