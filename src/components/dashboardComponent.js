@@ -34,6 +34,7 @@ class DashboardComponent extends Component {
       salary_acc_present: 0,
       salary_acc_absent: 0,
       salary_acc_halfDay: 0,
+      isLoading: true,
     };
   }
 
@@ -97,6 +98,14 @@ class DashboardComponent extends Component {
   componentDidMount() {
     this.handleSubmit({ preventDefault: () => {} });
     this.keepApiAwake();
+    this.loadingTimeout = setTimeout(() => {
+      this.setState({ isLoading: false });
+    }, 10000);
+  }
+
+  componentWillUnmount() {
+    // Clear the timeout to prevent memory leaks
+    clearTimeout(this.loadingTimeout);
   }
 
   handleMonthChange = (e) => {
@@ -125,6 +134,7 @@ class DashboardComponent extends Component {
       salary_acc_present,
       salary_acc_absent,
       salary_acc_halfDay,
+      isLoading,
     } = this.state;
 
     if (!employee) return null;
@@ -337,7 +347,18 @@ class DashboardComponent extends Component {
 
     //returning the component
 
-    return <div>{dashboard_comp}</div>;
+    return (
+      <div>
+        {isLoading ? (
+          <h2>
+            Important Note: The dashboard may take some time to load for the
+            first time
+          </h2>
+        ) : (
+          <div>{dashboard_comp}</div>
+        )}
+      </div>
+    );
   }
 }
 
