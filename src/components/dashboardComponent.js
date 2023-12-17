@@ -89,15 +89,9 @@ class DashboardComponent extends Component {
       .catch((error) => console.log(error));
   };
 
-  keepApiAwake = () => {
-    setInterval(() => {
-      axios.get(baseURL).catch((error) => console.log(error));
-    }, 5000);
-  };
 
   componentDidMount() {
     this.handleSubmit({ preventDefault: () => {} });
-    this.keepApiAwake();
     this.loadingTimeout = setTimeout(() => {
       this.setState({ isLoading: false });
     }, 10000);
@@ -354,8 +348,9 @@ class DashboardComponent extends Component {
             <h2>The dashboard may take some time to load</h2>
           </center>
         ) : (
-          <div>{dashboard_comp}</div>
-        )}
+      <div>{dashboard_comp}</div>
+      )
+      }
       </div>
     );
   }
