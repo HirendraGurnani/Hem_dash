@@ -22,7 +22,7 @@ function Navbar() {
       >
         <Container maxWidth="xl">
           <div className="App header">
-            <h1 className="title">Employee Dashboard</h1>
+            <h1 className="title">Admin Dashboard</h1>
           </div>
         </Container>
       </AppBar>
