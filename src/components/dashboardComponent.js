@@ -94,7 +94,7 @@ class DashboardComponent extends Component {
     this.handleSubmit({ preventDefault: () => {} });
     this.loadingTimeout = setTimeout(() => {
       this.setState({ isLoading: false });
-    }, 10000);
+    }, 3000);
   }
 
   componentWillUnmount() {
