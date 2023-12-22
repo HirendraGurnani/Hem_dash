@@ -1,6 +1,6 @@
 {
   "short_name": "Employee Dashboard",
-  "name": "A Dashboard for employees",
+  "name": "A Dashboard for admin of the company to view employee details",
   "icons": [
     {
       "src": "favicon.ico",

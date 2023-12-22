@@ -1,7 +1,6 @@
 import * as React from "react";
 import AppBar from "@mui/material/AppBar";
 import Container from "@mui/material/Container";
-// import "../assets/css/navbar.css";
 
 function Navbar() {
   return (
